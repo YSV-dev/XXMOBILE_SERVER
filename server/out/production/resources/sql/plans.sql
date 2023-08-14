@@ -1,0 +1,28 @@
+select
+    p.PLAN_ID,
+    p.ORGANIZATION_ID,
+    p.SERVICE,
+    p.PLAN_DATE,
+    p.SHIFT,
+    p.SHIFT_START,
+    p.SHIFT_END,
+    p.DESCRIPTION,
+
+    p.LINE_COUNT,
+    p.INSPECTION_LINE_COUNT,
+
+    p.CREATION_DATE as CREATED_AT,
+    p.CREATED_BY,
+    cu.DESCRIPTION as CREATED_BY_NAME,
+    
+    p.LAST_UPDATE_DATE as UPDATED_AT,
+    p.LAST_UPDATED_BY as UPDATED_BY,
+    uu.DESCRIPTION as UPDATED_BY_NAME
+
+from XXMOBILE_PLANS_V p
+join APPS.FND_USER cu on cu.USER_ID = p.CREATED_BY
+join APPS.FND_USER uu on uu.USER_ID = p.LAST_UPDATED_BY
+where 1=1
+    /*%CONDITIONS%*/
+/*%SORTING%*/
+fetch first :p_limit rows only

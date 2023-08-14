@@ -1,0 +1,10 @@
+begin
+    xxeam.xxmobile_api_pkg.update_tag_object(
+        :p_serial_number,
+        :p_organization_id,
+        :p_object_type,
+        :p_object_id,
+        :p_tag_position,
+        :p_user_id
+    );
+end;

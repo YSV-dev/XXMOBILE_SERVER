@@ -1,0 +1,10 @@
+begin
+    xxeam.xxmobile_api_pkg.update_tag(
+        :p_serial_number,
+        :p_tag_type_id,
+        :p_organization_id,
+        :p_category,
+        :p_app_id,
+        :p_user_id
+    );
+end;
